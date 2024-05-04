@@ -1,0 +1,157 @@
+.App {
+  min-height: 100vh;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+}
+h1 {
+  margin-bottom: 0;
+}
+h3 {
+  text-align: left;
+  margin-bottom: 2em;
+}
+body {
+  margin: 0;
+}
+.navbar {
+  margin-bottom: 1em;
+}
+.navbar-nav {
+  justify-content: space-around;
+  gap: 1em;
+  align-items: center;
+}
+img {
+  max-width: 100%;
+}
+.btn {
+  outline: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.bi {
+  color: gray;
+}
+.container {
+  padding: 0;
+}
+.row {
+  padding: 0 0.8em;
+}
+.imgs {
+  padding: 0.15rem;
+}
+.card-img {
+  border-radius: 1px;
+}
+.carousel-control-prev {
+  justify-content: flex-start;
+}
+.carousel-control-next {
+  justify-content: flex-end;
+}
+.flex_men {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+}
+.footer {
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.link {
+  text-align: left;
+  text-decoration: none;
+  color: gray;
+  :hover {
+    color: white;
+  }
+}
+.footer svg {
+  width: 25px;
+  height: 25px;
+  margin: 0.5em;
+}
+.footer button {
+  margin: 1em;
+}
+.flex_fot {
+  display: inline;
+}
+
+.profilePage {
+  .btn {
+    outline: none;
+    border-radius: 2px;
+    cursor: pointer;
+    margin: 0.5em 0 1em 0;
+  }
+  .imgs {
+    padding: 0.15rem;
+  }
+  img {
+    border-radius: 1px;
+  }
+  main {
+    margin-top: 5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+  }
+  .flex_pro {
+    display: flex;
+    gap: 1em;
+  }
+  .border_bot {
+    border-bottom: 1px solid gray;
+  }
+}
+
