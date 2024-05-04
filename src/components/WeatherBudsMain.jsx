@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Button, Dropdown, Form } from 'react-bootstrap';
-/*import { useNavigate } from 'react-router-dom';*/
-import WeatherFetch from './WeatherFetch';
+import { useNavigate } from 'react-router-dom';
 
 
 const WBMain = () => {
   const [searchQuery, setSearchQuery] = useState('');
-  const [city, setCity] = useState();
-  /*const navigate = useNavigate();*/
+  const navigate = useNavigate();
 
   const handleSearchInputChange = (event) => {
     setSearchQuery(event.target.value);
@@ -15,8 +13,7 @@ const WBMain = () => {
 
   const handleSearchSubmit = (event) => {
     event.preventDefault();
-    setCity(searchQuery);
-    /*navigate('/WeatherFetch');*/
+    navigate(`/WeatherFetch/${searchQuery}`);
   };
 
   return (
@@ -76,7 +73,6 @@ const WBMain = () => {
           Search
         </Button>
       </Form>
-      <WeatherFetch searchQ={city}/>
     </Container>
   );
 };

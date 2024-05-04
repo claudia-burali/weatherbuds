@@ -14,7 +14,7 @@ function App() {
           <WeatherBudsNav />
           <Routes>
             <Route path="/" element={<WeatherBudsMain />} />
-            <Route path="/WeatherFetch" element={<WeatherFetch />} />
+            <Route path="/WeatherFetch/:dinamicID" element={<WeatherFetch />} />
           </Routes>
           <WeatherBudsFot />
         </BrowserRouter>

@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Card } from 'react-bootstrap';
+import { useParams } from 'react-router-dom';
 
-const WBFetch = (props) => {
+const WBFetch = () => {
+  const {dinamicID} = useParams()
   const [latitude, setLatitude] = useState(null);
   const [longitude, setLongitude] = useState(null);
   const [todayWeather, setTodayWeather] = useState(null);
@@ -9,7 +11,7 @@ const WBFetch = (props) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${props.searchQ}&appid=e5e4ea9cf3dcca9c18761bb02089cb2e`);
+        const response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${dinamicID}&appid=e5e4ea9cf3dcca9c18761bb02089cb2e`);
         if (!response.ok) {
           throw new Error('City not found');
         }
@@ -17,16 +19,17 @@ const WBFetch = (props) => {
         if (data.length > 0) {
           setLatitude(data[0].lat);
           setLongitude(data[0].lon);
+          console.log(data);
         }
       } catch (error) {
         console.error('Error fetching data:', error);
       }
     };
 
-    if (props.searchQ) {
+    if (dinamicID) {
       fetchData();
     }
-  }, [props.searchQ]);
+  }, [dinamicID]);
 
   useEffect(() => {
     const fetchWeatherData = async () => {
