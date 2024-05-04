@@ -55,6 +55,8 @@ h3 {
 }
 body {
   margin: 0;
+  color: rgb(16, 63, 75);
+  background-color: rgb(255, 252, 247);
 }
 .navbar {
   margin-bottom: 1em;
@@ -73,7 +75,7 @@ img {
   cursor: pointer;
 }
 .bi {
-  color: gray;
+  color: rgb(16, 63, 75);
 }
 .container {
   padding: 0;
@@ -108,9 +110,9 @@ img {
 .link {
   text-align: left;
   text-decoration: none;
-  color: gray;
+  color: rgb(16, 63, 75);
   :hover {
-    color: white;
+    color: rgb(70, 194, 224);
   }
 }
 .footer svg {
@@ -150,8 +152,6 @@ img {
     display: flex;
     gap: 1em;
   }
-  .border_bot {
-    border-bottom: 1px solid gray;
-  }
+  
 }
 

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Button, Dropdown, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import SapiensImg from '../assets/sapiens_1.png';
 
 
 const WBMain = () => {
@@ -17,12 +18,16 @@ const WBMain = () => {
   };
 
   return (
-    <Container className="my-3">
+    <Container className="my-5">
       <Row className="text-center text-lg-start d-flex align-items-center justify-content-between my-4">
         <Col>
-          <div className="d-flex gap-3 align-items-center">
-            <h1 className="d-inline">Hi UserName</h1>
-            <Dropdown className="d-inline">
+          <div className="d-flex gap-3 align-items-center my-2">
+            <h1 className="d-inline">Welcome to WeatherBuds!</h1>
+          </div>
+        </Col>
+        <Col>
+          <div className="d-flex gap-1 justify-content-end">
+          <Dropdown className="d-inline">
               <Dropdown.Toggle variant="outline" id="dropdown-basic">
                 EN
               </Dropdown.Toggle>
@@ -35,17 +40,6 @@ const WBMain = () => {
                 <Dropdown.Item href="#">ZH</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
-          </div>
-        </Col>
-        <Col>
-          <div className="d-flex gap-1 justify-content-end">
-            <Button variant="outline">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16"
-                height="16"
-                fill="currentColor"
-                className="bi bi-grid-fill"
-                viewBox="0 0 16 16"><path d="M172.3 501.7C27 291 0 269.4 0 192 0 86 86 0 192 0s192 86 192 192c0 77.4-27 99-172.3 309.7-9.5 13.8-29.9 13.8-39.5 0zM192 272c44.2 0 80-35.8 80-80s-35.8-80-80-80-80 35.8-80 80 35.8 80 80 80z"/></svg>
-            </Button>
             <Button variant="outline">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -61,18 +55,21 @@ const WBMain = () => {
           </div>
         </Col>
       </Row>
-      
-      <Form onSubmit={handleSearchSubmit} className="d-flex">
+      <div className="my-5">
+        <p>Stay ahead of the forecast with real-time weather updates for any location. Whether you're planning your day or preparing for an adventure, WeatherBuds has you covered. Enter your city and discover what the skies have in store for you!</p>
+      </div>
+      <Form onSubmit={handleSearchSubmit} className="d-flex my-3">
         <Form.Control
           type="text"
           placeholder="Enter city name"
           value={searchQuery}
           onChange={handleSearchInputChange}
         />
-        <Button type="submit" variant="outline">
+        <Button type="submit">
           Search
         </Button>
       </Form>
+      <img src={SapiensImg} alt="avatar" />
     </Container>
   );
 };
