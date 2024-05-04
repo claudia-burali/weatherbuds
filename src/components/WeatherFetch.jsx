@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Card } from 'react-bootstrap';
+import { Card, Container, Row, Col, ListGroup} from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 
 const WBFetch = () => {
@@ -7,6 +7,7 @@ const WBFetch = () => {
   const [latitude, setLatitude] = useState(null);
   const [longitude, setLongitude] = useState(null);
   const [todayWeather, setTodayWeather] = useState(null);
+  const [forecastData, setForecastData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -51,6 +52,28 @@ const WBFetch = () => {
     fetchWeatherData();
   }, [latitude, longitude]);
 
+  useEffect(() => {
+    const fetchForecastData = async () => {
+      try {
+        const response = await fetch(
+            `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=metric&appid=e5e4ea9cf3dcca9c18761bb02089cb2e`
+        );
+
+        if (!response.ok) {
+          throw new Error('Error fetching forecast data');
+        }
+
+        const forecastData = await response.json();
+        setForecastData(forecastData);
+        console.log(forecastData);
+      } catch (error) {
+        console.error('Error fetching forecast data', error);
+      }
+    };
+
+    fetchForecastData();
+  }, []);
+
   return (
     <>
     <Card style={{ width: "100%" }}>
@@ -68,6 +91,9 @@ const WBFetch = () => {
         </Card.Body>
       )}
     </Card>
+    
+
+                   
   </>
   );
 };
