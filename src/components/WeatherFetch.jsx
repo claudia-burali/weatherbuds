@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import SapiensImg from '../assets/sapiens_3.png';
-import { Card, Container, Row, Col, ListGroup } from "react-bootstrap";
+import SapiensImg_1 from '../assets/sapiens_4.png';
+import { Card } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 
 const WBFetch = () => {
@@ -83,8 +84,8 @@ const WBFetch = () => {
 
   return (
     <>
-      <div className="d-flex gap-3 align-items-start justify-content-around"> 
-         <Card className="todayCard">
+      <div className="d-flex align-items-center justify-content-between"> 
+         <Card className="todayCard mx-5">
           {todayWeather && (
           <Card.Body className="text-center">
             <Card.Title>
@@ -99,24 +100,24 @@ const WBFetch = () => {
           </Card.Body>
            )}
          </Card>
-         <img src={SapiensImg} alt="avatar" />
+         <img className="imgStyle" src={SapiensImg} alt="avatar" />
      </div>
-     <Container>
-        {forecastData && (
-          <Row>
-            <Col>
-              <Card style={{ width: "30%" }}>
-                <Card.Header>{forecastData.list[0].dt_txt}</Card.Header>
-                <ListGroup>
-                  <ListGroup.Item>{forecastData.list[0].weather.main}</ListGroup.Item>
-                  <ListGroup.Item>{forecastData.list[0].main.temp}&deg; C</ListGroup.Item>
-                  <ListGroup.Item>{forecastData.list[0].weather.main}</ListGroup.Item>
-                </ListGroup>
-              </Card>
-            </Col>
-          </Row>
-        )}
-     </Container>
+     <div className="d-flex align-items-center justify-content-between"> 
+        <img className="imgStyle" src={SapiensImg_1} alt="avatar" />
+        <div>
+         <Card className="todayCard mx-5">
+          {forecastData && (
+          <Card.Body className="text-center">
+            <Card.Title>
+              <img src={`https://openweathermap.org/img/wn/${forecastData.list[0].weather[0].icon}@2x.png`} alt="Weather icon" />
+            </Card.Title>
+            <Card.Text>{Math.round(forecastData.list[0].main.temp)}&deg; C</Card.Text>
+            <Card.Text>{forecastData.list[0].weather.main}</Card.Text>
+          </Card.Body>
+           )}
+         </Card>
+        </div>
+     </div>
     </>
   );
 };
