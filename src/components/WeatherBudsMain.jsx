@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Button, Dropdown, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import SapiensImg from '../assets/sapiens_1.png';
+import SapiensImg from '../assets/sapiens_2.png';
 
 
 const WBMain = () => {
@@ -58,14 +58,14 @@ const WBMain = () => {
       <div className="my-5">
         <p>Stay ahead of the forecast with real-time weather updates for any location. Whether you're planning your day or preparing for an adventure, WeatherBuds has you covered. Enter your city and discover what the skies have in store for you!</p>
       </div>
-      <Form onSubmit={handleSearchSubmit} className="d-flex my-3">
+      <Form onSubmit={handleSearchSubmit} className="d-flex gap-1 my-3">
         <Form.Control
           type="text"
           placeholder="Enter city name"
           value={searchQuery}
           onChange={handleSearchInputChange}
         />
-        <Button type="submit">
+        <Button type="submit" className="search">
           Search
         </Button>
       </Form>

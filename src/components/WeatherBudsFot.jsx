@@ -45,7 +45,7 @@ function WBFot() {
             <a className="link" href="#y">Terms of Use </a>
             <a className="link" href="#z">Corporate Information </a>
         </div>
-        <Button variant="outline" className="mb-4">Contact Us</Button>
+        <Button className="mb-4 search">Contact Us</Button>
         <span>© 2024 WeatherBuds, Inc.</span>
     </Container>
   );

@@ -112,7 +112,7 @@ img {
   text-decoration: none;
   color: rgb(16, 63, 75);
   :hover {
-    color: rgb(70, 194, 224);
+    color: rgb(45, 168, 199);
   }
 }
 .footer svg {
@@ -126,32 +126,10 @@ img {
 .flex_fot {
   display: inline;
 }
-
-.profilePage {
-  .btn {
-    outline: none;
-    border-radius: 2px;
-    cursor: pointer;
-    margin: 0.5em 0 1em 0;
-  }
-  .imgs {
-    padding: 0.15rem;
-  }
-  img {
-    border-radius: 1px;
-  }
-  main {
-    margin-top: 5em;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1em;
-  }
-  .flex_pro {
-    display: flex;
-    gap: 1em;
-  }
-  
+.search {
+  background-color: #4a88fa;
+  border: none;
 }
-
+.todayCard {
+  min-width: 30%;
+}

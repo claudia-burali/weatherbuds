@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import SapiensImg from '../assets/sapiens_3.png';
 import { Card, Container, Row, Col, ListGroup } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 
@@ -82,26 +83,29 @@ const WBFetch = () => {
 
   return (
     <>
-      <Card style={{ width: "100%" }}>
-        {todayWeather && (
+      <div className="d-flex gap-3 align-items-start justify-content-around"> 
+         <Card className="todayCard">
+          {todayWeather && (
           <Card.Body className="text-center">
             <Card.Title>
-              <img src={`https://openweathermap.org/img/wn/${todayWeather.weather[0].icon}@2x.png`} alt="" />
+              <img src={`https://openweathermap.org/img/wn/${todayWeather.weather[0].icon}@2x.png`} alt="Weather icon" />
             </Card.Title>
-            <Card.Text>{todayWeather.main.temp}&deg; C</Card.Text>
+            <Card.Text>{Math.round(todayWeather.main.temp)}&deg; C</Card.Text>
             <Card.Text>{todayWeather.weather.description}</Card.Text>
             <Card.Text>{todayWeather.name}</Card.Text>
             <Card.Text>Today</Card.Text>
             <Card.Text>Humidity: {todayWeather.main.humidity} %</Card.Text>
             <Card.Text>Wind Speed: {todayWeather.wind.speed} km/h</Card.Text>
           </Card.Body>
-        )}
-      </Card>
-      <Container>
+           )}
+         </Card>
+         <img src={SapiensImg} alt="avatar" />
+     </div>
+     <Container>
         {forecastData && (
           <Row>
             <Col>
-              <Card style={{ width: "100%" }}>
+              <Card style={{ width: "30%" }}>
                 <Card.Header>{forecastData.list[0].dt_txt}</Card.Header>
                 <ListGroup>
                   <ListGroup.Item>{forecastData.list[0].weather.main}</ListGroup.Item>
@@ -112,7 +116,7 @@ const WBFetch = () => {
             </Col>
           </Row>
         )}
-      </Container>
+     </Container>
     </>
   );
 };
